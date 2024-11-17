@@ -27,7 +27,9 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Ctrl + N released");
-                tabs.addTab("tab " + (tabs.getTabCount() + 1), new TextWindow());
+                int newTabIndex = tabs.getTabCount() + 1;
+                tabs.addTab("tab " + newTabIndex, new TextWindow());
+                tabs.setSelectedIndex(newTabIndex - 1);
             }
         });
 
@@ -146,16 +148,18 @@ class TextWindow extends JPanel {
         this.setLayout(new BorderLayout(10, 10));
         ta = new JTextArea(30, 50);
         ta.setFont(new Font("Monospaced", Font.PLAIN, 14));
-        this.add(new JScrollPane(ta), BorderLayout.CENTER);
         String[] columns = { "word", "count" };
         tableModel = new DefaultTableModel(columns, 0);
         JTable jt = new JTable(tableModel);
         JPanel table_panel = new JPanel();
         table_panel.setLayout(new BorderLayout());
         table_panel.add(new JLabel("Word Counts", JLabel.CENTER), BorderLayout.NORTH);
-        table_panel.add(jt, BorderLayout.CENTER);
-        this.add(table_panel, BorderLayout.WEST);
-        counter = new JLabel("Words : 0 | Character : 0");
+        table_panel.add(new JScrollPane(jt), BorderLayout.CENTER);
+        JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, table_panel, new JScrollPane(ta));
+        splitPane.setDividerLocation(250);
+        splitPane.setResizeWeight(0.5);
+        this.add(splitPane, BorderLayout.CENTER);
+        counter = new JLabel("Words : 0 | Characters : 0");
         this.add(counter, BorderLayout.SOUTH);
         ta.addKeyListener(new KeyAdapter() {
             public void keyReleased(KeyEvent e) {
