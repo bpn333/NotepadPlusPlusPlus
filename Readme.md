@@ -2,6 +2,9 @@
 
 Welcome to **Notepad+++**, the latest ~~revolution~~ in the world of text editors. It’s like Notepad, but with more pluses—plus tabs, plus features, and, of course, plus **extra confusion**! 😎
 
+## Live Demo 🎬:
+https://github.com/user-attachments/assets/96a62819-9a7c-461f-9fa7-1c10862fa491
+
 ## Key Bindings (aka, How to Press Buttons and Make Things Happen) ⌨️:
 - **Ctrl + N:** Open a new tab! You’ll need it because you can never have enough tabs. 📝
 - **Ctrl + W:** Close a tab. Poof! Gone! (But don't worry, your hopes and dreams will remain intact). ✂️
