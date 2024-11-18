@@ -146,7 +146,7 @@ class TextWindow extends JPanel {
 
     public TextWindow() {
         this.setLayout(new BorderLayout(10, 10));
-        ta = new JTextArea(30, 50);
+        ta = new JTextArea();
         ta.setFont(new Font("Monospaced", Font.PLAIN, 14));
         String[] columns = { "word", "count" };
         tableModel = new DefaultTableModel(columns, 0);
@@ -156,8 +156,8 @@ class TextWindow extends JPanel {
         table_panel.add(new JLabel("Word Counts", JLabel.CENTER), BorderLayout.NORTH);
         table_panel.add(new JScrollPane(jt), BorderLayout.CENTER);
         JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, table_panel, new JScrollPane(ta));
-        splitPane.setDividerLocation(250);
-        splitPane.setResizeWeight(0.5);
+        splitPane.setDividerLocation(150);
+        splitPane.setResizeWeight(0.1);
         this.add(splitPane, BorderLayout.CENTER);
         counter = new JLabel("Words : 0 | Characters : 0");
         this.add(counter, BorderLayout.SOUTH);

@@ -15,8 +15,8 @@
   <manifest></manifest>
   <icon>C:\Users\bipin\project\notepad+++\icon.ico</icon>
   <jre>
-    <path>%JAVA_HOME%;%PATH%</path>
-    <requiresJdk>false</requiresJdk>
+    <path>jre</path>
+    <requiresJdk>true</requiresJdk>
     <requires64Bit>false</requires64Bit>
     <minVersion></minVersion>
     <maxVersion></maxVersion>
